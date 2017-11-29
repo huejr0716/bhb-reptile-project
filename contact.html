@@ -10,49 +10,48 @@
     <!--Custom styles here-->
     <link rel="stylesheet" href="css/style.css">
     <style>
-        
         * {
             box-sizing: border-box;
         }
+
         body {
             background-image: url(img/background1.jpg);
             background-position: center center;
         }
+        /*navigation menu*/
 
-       /*navigation menu*/
+        nav {
+            background-color: #596f38;
+            overflow: hidden;
+        }
 
-		nav {
-			background-color: #596f38;
-			overflow: hidden;
-		}
-
-		nav ul {
-			margin: 0;
-			padding: 0;
+        nav ul {
+            margin: 0;
+            padding: 0;
             list-style: none;
-		}
+        }
 
-		nav ul li {
-			float: left;
-		}
+        nav ul li {
+            float: left;
+        }
 
-		nav ul li a {
-			color: #FFFFFF;
-			display: block;
-			font-size: 11px;
-			font-weight: bold;
-			height: 30px;
-			line-height: 20px;
-			padding: 4px 10px 4px 11px;
-			position: relative;
-			text-decoration: none;
-			text-transform: uppercase;
-		}
+        nav ul li a {
+            color: #FFFFFF;
+            display: block;
+            font-size: 11px;
+            font-weight: bold;
+            height: 30px;
+            line-height: 20px;
+            padding: 4px 10px 4px 11px;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
 
-		nav ul li a:hover,
-		nav ul li.selected a {
-			background: none repeat scroll 0 0 #353535;
-		}
+        nav ul li a:hover,
+        nav ul li.selected a {
+            background: none repeat scroll 0 0 #353535;
+        }
 
 
 
@@ -67,7 +66,8 @@
             resize: vertical;
         }
 
-        .formcontainer label, .formcontainer select{
+        .formcontainer label,
+        .formcontainer select {
             margin: 12px 12px 12px 0;
             display: inline-block;
         }
@@ -110,17 +110,15 @@
             display: table;
             clear: both;
         }
-        
-        footer{
-            background:white;
-            padding:20px;
+
+        footer {
+            background: white;
+            padding: 20px;
         }
-        
-        .social img{
-            height:40px;
+
+        .social img {
+            height: 40px;
         }
-        
-        
         /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 
         @media (max-width: 600px) {
@@ -131,7 +129,6 @@
                 margin-top: 0;
             }
         }
-
     </style>
 </head>
 
@@ -205,7 +202,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <input type="submit" value="Submit">
+                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="submit">
+                                        Sign Up
+                                    </button>
+
                                 </div>
                             </form>
                         </div>
@@ -214,38 +214,69 @@
             </table>
         </div>
     </div>
-        <footer>
-            <div class="row">
-                <div id="privacy" class="col-md-2">
-				<a class="link" href="https://www.bhbreptiles.com/">© 2017 BHB Reptiles  </a>
-				<br>
-				<a class="link" href="https://www.shopify.com/"> Ecommerce Software by Shopify</a>
-				<br>
-				<a class="link" href="https://www.script-tutorials.com/">Privacy Policy</a>
-				<br/>
-			</div>
-                <div class="col-md-8">
-                    <p style="text-align:center;"><b>© 2017 BHB Reptiles Ecommerce Software by Shopify</b></p>
+    <footer>
+        <div class="row">
+            <div id="privacy" class="col-md-2">
+                <a class="link" href="https://www.bhbreptiles.com/">© 2017 BHB Reptiles  </a>
+                <br>
+                <a class="link" href="https://www.shopify.com/"> Ecommerce Software by Shopify</a>
+                <br>
+                <a class="link" href="https://www.script-tutorials.com/">Privacy Policy</a>
+                <br/>
+            </div>
+            <div class="col-md-8">
+                <p style="text-align:center;"><b>© 2017 BHB Reptiles Ecommerce Software by Shopify</b></p>
+            </div>
+            <div class="col-md-2 social">
+                <img src="img/iglogo.png">
+                <img src="img/fblogo.png">
+                <img src="img/ytlogo.png">
+            </div>
+        </div>
+    </footer>
+    <!--modal container -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- modal content-->
+            <div class="modal-content">
+                <!-- modal header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Registration Confirmed</h4>
                 </div>
-                <div class="col-md-2 social">
-                    <img src="img/iglogo.png">
-                    <img src="img/fblogo.png">
-                    <img src="img/ytlogo.png">
+                <!-- modal body-->
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <!-- modal footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
-        </footer>
-        <!--Required scripts-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!--Custom script here-->
-        <script>
-            $(document).ready(function() {
-                $("#myBtn").click(function() {
-                    $("#myModal").modal();
-                });
+        </div>
+    </div>
+    <!--Required scripts-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--Custom script here-->
+    <script>
+        $(document).ready(function() {
+            $("#myBtn").click(function() {
+                $("#myModal").modal();
             });
+            $("#submit").click(function(){
+            f= $("#fname").val();
+            l= $("#lname").val();
+            c= $("#country").val();
+            s= $("#subject").val();
+                
+     $(".modal-body").html("First Name: "+f+"<br>"+ "Last Name: " + l+"<br>" + "Country: "+c+"<br>" + "Subject: "+s);           
+            });
+            
 
-        </script>
-    </body>
+
+        });
+    </script>
+</body>
 
 </html>
