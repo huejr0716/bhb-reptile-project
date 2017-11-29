@@ -20,6 +20,7 @@
         }
         /*navigation menu*/
 
+/*
         nav {
             background-color: #596f38;
             overflow: hidden;
@@ -52,7 +53,53 @@
         nav ul li.selected a {
             background: none repeat scroll 0 0 #353535;
         }
+*/
+         #nav {
+			height: 70px;
+			background: transparent; // Transparent initial setting
+			display: block;
+			position: fixed;
+			min-width: 100%;
+			z-index: 1;
+			transition: all ease .5s;
+		}
 
+
+		#nav.shrink {
+			height: 50px;
+			transition: all ease .5s;
+/*			background: #667b47; */
+/*            // Change background to black on scroll*/
+		}
+
+		#nav.shrink #logo {
+			padding: 10px;
+			transition: all ease .5s;
+		}
+        
+        #nav a{
+            color: black;
+            font-size: 14px;
+            font-style: bold;
+        }
+        
+        
+        #logo{
+            position: relative;
+            height: 70px;
+            top: -10px;
+        }
+        #logo img{
+            position: relative;
+            top: 15px;
+            height: 50px;
+            right: -10px;
+            z-index: 2;
+        }
+
+        #topBar{
+            background-color: #596f38;
+        }
 
 
         .formcontainer input[type=text],
@@ -141,19 +188,62 @@
     </header>
 
 
-    <nav>
+    <nav id="nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"  style="width: 140px;"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop Reptiles<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop.html">Leopard Geckos</a></li>
+                            <li><a href="shop.html">Python</a></li>
+                            <li><a href="shop.html"#"">Colubirds(Snakes)</a></li>
+                            <li><a href="shop.html">Boa Constructors</a></li>
+                        </ul>
+                    </li>
+          
+           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Gift Shop<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Apperals</a></li>
+                            <li><a href="#">Gift Certificates</a></li>
+                            <li><a href="#">Magazines/Stickers</a></li>
+                            <li><a href="#">DVDs and Blu Ray</a></li>
+                        </ul>
+                    </li>
+          
+        <li><a href="#">FAQ</a></li>
+            <form class="navbar-form navbar-left">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="contact.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="fluid-container">
+    <div id = "topBar">
+    <div id = "logo">
         <img src="img/logo.png">
-        <!-- Defining the navigation menu -->
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li class="selected"><a href="contact.html">Sign up</a></li>
-            <div class="add">
-                <input id="search-bar" name="search" type="text" placeholder="Search...">
-                <input id="search-button" name="search_submit" type="submit" value="Search!">
-            </div>
-        </ul>
-    </nav>
+    </div>
+      </div> 
+        
+
 
     <div class="container">
         <div id="title">
