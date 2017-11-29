@@ -3,196 +3,242 @@
 <html>
 
 <head>
-	<title>bootstrap</title>
-	<!--Required metatag and stylesheet-->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!--Custom styles here-->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/glide.core.css">
-	<link rel="stylesheet" href="css/glide.theme.css">
-	<style>
-		.fluid-container .item img {
-			position: absolute top 0;
-			display: block;
-			margin: 0 auto;
-			min-width: 100%;
-			flex: -1;
-			opacity: 0.8;
-		}
-		/*
-        .fluid-container nav .navbar{
-            position: absolute top 0;
+    <title>bootstrap</title>
+    <!--Required metatag and stylesheet-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        #nav {
+            height: 70px;
+            background: transparent; // Transparent initial setting
             display: block;
-*/
+            position: fixed;
+            min-width: 100%;
+            z-index: 1;
+            transition: all ease .5s;
+        }
 
-		
-		
-		#nav {
-			height: 70px;
-			background: transparent; // Transparent initial setting
-			display: block;
-			position: fixed;
-			width: 100%;
-			z-index: 99999;
-			transition: all ease .5s;
-		}
 
-		#logo {
-			color: #fff;
-			font-style: italic;
-			font-family: sans-serif;
-			padding: 20px;
-			font-size: 18px;
-			transition: all ease .5s;
-		}
+        #nav.shrink {
+            height: 50px;
+            transition: all ease .5s;
+            /*			background: #667b47; */
+            /*            // Change background to black on scroll*/
+        }
 
-		#nav.shrink {
-			height: 40px;
-			transition: all ease .5s;
-			background: black; // Change background to black on scroll
-		}
+        #nav.shrink #logo {
+            padding: 10px;
+            transition: all ease .5s;
+        }
 
-		#nav.shrink #logo {
-			padding: 10px;
-			transition: all ease .5s;
-		}
-		/*		midbox-----------------------------------------------------------------*/
+        #nav a {
+            color: black;
+            font-size: 14px;
+            font-style: bold;
+        }
 
-		#midBox #aboutUS {
-			position: relative;
-			width: 500px;
-			right: -600px;
-			top: 10px;
-		}
 
-		#midBox #Brain {
-			position: relative;
-			top: -480px;
-			margin: 0 auto;
-			left: 20px;
-		}
-		/*-----------footer-----------------------------------------------------------*/
+        #logo {
+            position: relative;
+            height: 70px;
+            top: -10px;
+        }
 
-		.bottomBar {
-			position: relative;
-			background-color: #667b47;
-		}
+        #logo img {
+            position: relative;
+            top: 15px;
+            height: 50px;
+            right: -10px;
+            z-index: 2;
+        }
 
-		.bottomBar .QuickLinks {
-			position: relative;
-			color: black;
-			padding-top: 10px;
-		}
+        #topBar {
+            background-color: #596f38;
+        }
+        /*		midbox-----------------------------------------------------------------*/
 
-		.bottomBar .GetInTouch {
-			position: relative;
-			color: black;
-			left: 200px;
-			top: -157px;
-			padding-top: 10px;
-		}
-		/*		slider------------------------------------------------------------*/
+        #midBox {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-		.itemSlider {
-			position: relative;
-			top: -300px
-		}
 
-		.itemSlider.multi-item-carousel {
-			.carousel-inner {
-				>.item {
-					transition: 500ms ease-in-out left;
-				}
-				.active {
-					&.left {
-						left: -33%;
-					}
-					&.right {
-						left: 33%;
-					}
-				}
-				.next {
-					left: 33%;
-				}
-				.prev {
-					left: -33%;
-				}
-				@media all and (transform-3d),
-				(-webkit-transform-3d) {
-					>.item {
-						// use your favourite prefixer here
-						transition: 500ms ease-in-out left;
-						transition: 500ms ease-in-out all;
-						backface-visibility: visible;
-						transform: none!important;
-					}
-				}
-			}
-			.carouse-control {
-				&.left,
-				&.right {
-					background-image: none;
-				}
-			}
-		}
+        #midBox #aboutUS {
+            position: relative;
+            width: 500px;
+            right: -600px;
+            top: 10px;
+        }
 
-		body {
-			background: #333;
-			color: #ddd;
-		}
+        #midBox #Brain {
+            position: relative;
+            top: -480px;
+            margin: 0 auto;
+            left: 20px;
+        }
 
-		h1 {
-			color: white;
-			font-size: 2.25em;
-			text-align: center;
-			margin-top: 1em;
-			margin-bottom: 2em;
-			text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
-		}
-	</style>
+        #midBox #Brain2 {
+            position: relative;
+            top 6S00px;
+        }
+        /*-----------footer-----------------------------------------------------------*/
+
+        .bottomBar {
+            position: relative;
+            background-color: #667b47;
+            min-width: 100%;
+            height: 260px;
+        }
+
+        .bottomBar .QuickLinks {
+            position: relative;
+            color: black;
+            padding-top: 10px;
+        }
+
+        .bottomBar .GetInTouch {
+            position: relative;
+            color: black;
+            left: 200px;
+            top: -157px;
+            padding-top: 10px;
+        }
+        /*		slider------------------------------------------------------------*/
+
+        #rect {
+            position: relative;
+            min-width: 100%;
+            height: 150px;
+            top: -400px;
+            background-color: #596f38;
+            text-align: center;
+        }
+        
+
+        .itemSlider {
+            position: relative;
+            top: -300px;
+            background-color: beige;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        .itemSlider.multi-item-carousel {
+            .carousel-inner {
+                >.item {
+                    transition: 500ms ease-in-out left;
+                }
+                .active {
+                    &.left {
+                        left: -33%;
+                    }
+                    &.right {
+                        left: 33%;
+                    }
+                }
+                .next {
+                    left: 33%;
+                }
+                .prev {
+                    left: -33%;
+                }
+                @media all and (transform-3d),
+                (-webkit-transform-3d) {
+                    >.item {
+                        // use your favourite prefixer here
+                        transition: 500ms ease-in-out left;
+                        transition: 500ms ease-in-out all;
+                        backface-visibility: visible;
+                        transform: none!important;
+                    }
+                }
+            }
+            .carouse-control {
+                &.left,
+                &.right {
+                    background-image: none;
+                }
+            }
+        }
+
+        .itemSlider h3 {
+            color: black;
+        }
+
+        .itemSlider {
+            border-style: ridge;
+        }
+
+        .itemSlider img {
+            border-style: ridge;
+        }
+
+        body {
+            background-image: url(img/11293169-Repeating-wallpaper-on-green-background-Stock-Photo.jpg);
+            min-width: 100%;
+            background: #333;
+            color: #ddd;
+        }
+
+
+        h1 {
+            color: white;
+            font-size: 2.25em;
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 2em;
+            text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
+        }
+
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background: transparent;
+            padding: 20px;
+        }
+
+        .social img {
+            height: 40px;
+        }
+    </style>
 
 </head>
 <!--   html------------- --------------------------------------------------------->
 
 <body>
-	<Header>
-		<nav>
-			<img src="img/logo.png">
-			<!-- Defining the navigation menu -->
-			<ul>
-				<li class="selected"><a href="index.html">Home</a></li>
-				<li><a href="shop.html">Shop</a></li>
-				<li><a href="contact.html">Sign up</a></li>
-				<form action="#" onsubmit="return false;" method="get">
-					<input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-					<input type="submit" value="Search">
-				</form>
-			</ul>
-		</nav>
-	</Header>
-	<div class="fluid-container">
 
 
-		<div id="hero"></div>
-
-
-		<!--
-        <nav class="navbar navbar-inverse">
-            <div class="navbar1">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">BHB Reptiles</a>
-                </div>
+    <nav id="nav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+                <a class="navbar-brand" href="#" style="width: 140px;"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-
+                    <li class="active"><a href="index.html">Home</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop Reptiles<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Leopard Geckos</a></li>
-                            <li><a href="#">Python</a></li>
-                            <li><a href="#">Colubirds(Snakes)</a></li>
-                            <li><a href="#">Boa Constructors</a></li>
+                            <li><a href="shop.html">Leopard Geckos</a></li>
+                            <li><a href="shop.html">Python</a></li>
+                            <li><a href="shop.html" # "">Colubirds(Snakes)</a></li>
+                            <li><a href="shop.html">Boa Constructors</a></li>
                         </ul>
                     </li>
 
@@ -206,235 +252,268 @@
                     </li>
 
                     <li><a href="#">FAQ</a></li>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="contact.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
-        </nav>
--->
+        </div>
+    </nav>
 
 
-		<!--        -carousel-------------------------------------------------------------------->
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			<!-- indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-			</ol>
-			<!-- wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<!--slide 1-->
-				<div class="item active">
-					<img src="img/reptile1.jpg">
-					<div class="carousel-caption">
-						<h1>Welcome</h1>
-					</div>
-				</div>
-				<!--slide 2-->
-				<div class="item">
-					<img src="img/reptile2.jpg">
-					<div class="carousel-caption">
-						<h2>To BHB Reptiles</h2>
-					</div>
-				</div>
-				<!--slide 3-->
-				<div class="item">
-					<img src="img/reptile3.jpg">
-					<div class="carousel-caption">
-						<h2>The best place to shop</h2>
-						<h2>for lizards, snakes, and more</h2>
-					</div>
-				</div>
-			</div>
-			<!-- controls -->
-			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <div class="fluid-container">
+        <div id="topBar">
+            <div id="logo">
+                <img src="img/logo.png">
+            </div>
+        </div>
+
+
+
+
+        <!--        -carousel-------------------------------------------------------------------->
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <!--slide 1-->
+                <div class="item active">
+                    <img src="img/reptile1.jpg">
+                    <div class="carousel-caption">
+                        <h1>Welcome</h1>
+                        <h1>To BHB Reptiles</h1>
+                    </div>
+                </div>
+                <!--slide 2-->
+                <div class="item">
+                    <img src="img/reptile2.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <!--slide 3-->
+                <div class="item">
+                    <img src="img/reptile3.jpg">
+                    <div class="carousel-caption">
+                        <h1>Find Incredible Deals in</h1>
+                        <h1>Lizards, Snakes, Geckos and more</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
 			</a>
-			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
-		</div>
-	</div>
+        </div>
+    </div>
 
-	<!--	midbox----------------------------------------------------------------------->
-	<div id="midBox">
-		<div id="aboutUS">
-			<h2>ABOUT US</h2>
+    <!--	midbox----------------------------------------------------------------------->
+    <div id="midBox">
 
-			<p>We hope that your time here will be fun and that you find everything that you are looking for. Our goal is to provide our customers with the highest quality reptiles coupled with service that is second to none. We have been in business since 1989, but my love for animals stems back to my childhood.</p>
+        <div id="aboutUS">
+            <h2>ABOUT US</h2>
 
-			<p>Our slogan here at BHB is "Covering the Spectrum" and that's how our collection has been built. This approach has lead us to work with a wide variety of snakes from Pythons, including one of the most diverse Ball Python collections, to Boas as well as a wide variety of Colubrids and other reptiles. We try to maintain a collection that will offer animals for the beginning hobbyist all the way to the requirements of the serious investor. Working with such a diverse group of animals has also allowed us to be very competitive with our pricing of our animals.</p>
+            <p>We hope that your time here will be fun and that you find everything that you are looking for. Our goal is to provide our customers with the highest quality reptiles coupled with service that is second to none. We have been in business since 1989, but my love for animals stems back to my childhood.</p>
 
-			<p>We would like to thank all of our customers for their continued support, as well as our fellow breeders for their friendship and advice over the years. This business has been very good to us here at BHB and we look forward to what the future holds. Without you, our customers, none of this would have been possible and we will never lose sight of that.</p>
+            <p>Our slogan here at BHB is "Covering the Spectrum" and that's how our collection has been built. This approach has lead us to work with a wide variety of snakes from Pythons, including one of the most diverse Ball Python collections, to Boas as well as a wide variety of Colubrids and other reptiles. We try to maintain a collection that will offer animals for the beginning hobbyist all the way to the requirements of the serious investor. Working with such a diverse group of animals has also allowed us to be very competitive with our pricing of our animals.</p>
 
-			<p>We hope you enjoy your visit and please comeback often as our site will be updated frequently!</p>
+            <p>We would like to thank all of our customers for their continued support, as well as our fellow breeders for their friendship and advice over the years. This business has been very good to us here at BHB and we look forward to what the future holds. Without you, our customers, none of this would have been possible and we will never lose sight of that.</p>
 
-			<p>Brian & Lori Barczyk</p>
-		</div>
+            <p>We hope you enjoy your visit and please comeback often as our site will be updated frequently!</p>
 
-		<div id="Brain">
-			<img src="img/brian-barczyk-net-worth.jpg">
-		</div>
-	</div>
+            <p>Brian & Lori Barczyk</p>
+        </div>
 
-	<!--	Small Image slider-------------------------------------------------------------------->
+        <div id="Brain">
+            <img src="img/brian-barczyk-net-worth.jpg">
+        </div>
 
+    </div>
 
-	<div class="itemSlider">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="carousel slide multi-item-carousel" id="theCarousel">
-					<div class="carousel-inner">
-						<div class="item active">
-							<div class="col-xs-4"><a href="#1"><img src="img/ReptileCollection/BallPython.png" class="img-responsive"></a></div>
-						</div>
-						<div class="item">
-							<div class="col-xs-4"><a href="#2"><img src="img/ReptileCollection/BoaConstructor.jpg" class="img-responsive"></a></div>
-						</div>
-						<div class="item">
-							<div class="col-xs-4"><a href="#3"><img src="img/ReptileCollection/CornSnakes.jpeg" class="img-responsive"></a></div>
-						</div>
-						<div class="item">
-							<div class="col-xs-4"><a href="#4"><img src="img/ReptileCollection/DumerilsBoas.jpg" class="img-responsive"></a></div>
-						</div>
-						<div class="item">
-							<div class="col-xs-4"><a href="#5"><img src="img/ReptileCollection/GarterSnakes.jpg" class="img-responsive"></a></div>
-						</div>
-						<div class="item">
-							<div class="col-xs-4"><a href="#6"><img src="img/ReptileCollection/KingSnakes.jpg" class="img-responsive"></a></div>
-						</div>
-						<!-- add  more items here -->
-						<!-- Example item start:  -->
+    <!--	Small Image slider-------------------------------------------------------------------->
 
-						<div class="item">
-							<div class="col-xs-4"><a href="#1"><img src="img/ReptileCollection/LeopardGecko.jpg" class="img-responsive"></a></div>
-						</div>
-
-						<!--  Example item end -->
-					</div>
-					<a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-					<a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div id="rect">
+        <h1>Shop for the world's finest collection of reptiles</h1>
+    </div>
 
 
+    <div class="itemSlider">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="carousel slide multi-item-carousel" id="theCarousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-xs-4"><a href="#1"><img src="img/ReptileCollection/BallPython.png" class="img-responsive"></a></div>
+                            <h3>Ball Python</h3>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-4"><a href="#2"><img src="img/ReptileCollection/BoaConstructor.jpg" class="img-responsive"></a></div>
+                            <h3>Boa Constrictors</h3>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-4"><a href="#3"><img src="img/ReptileCollection/CornSnakes.jpeg" class="img-responsive"></a></div>
+                            <h3>Corn Snakes</h3>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-4"><a href="#4"><img src="img/ReptileCollection/DumerilsBoas.jpg" class="img-responsive"></a></div>
+                            <h3>Dumerils Boas</h3>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-4"><a href="#5"><img src="img/ReptileCollection/GarterSnakes.jpg" class="img-responsive"></a></div>
+                            <h3>Garter Snakes</h3>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-4"><a href="#6"><img src="img/ReptileCollection/KingSnakes.jpg" class="img-responsive"></a></div>
+                            <h3>King Snakes</h3>
+                        </div>
+                        <!-- add  more items here -->
+                        <!-- Example item start:  -->
 
-	<!--	-------footer--------------------------------------------------------------------------------->
-	<div id="lowerBackground">
+                        <div class="item">
+                            <div class="col-xs-4"><a href="#1"><img src="img/ReptileCollection/LeopardGecko.jpg" class="img-responsive"></a></div>
+                            <h3>Leapord Geckos</h3>
+                        </div>
 
-
-		<div class="bottomBar">
-			<div class="QuickLinks">
-				<ul style="list-style: none">
-					<li>
-						<h3>QuickLinks</h3>
-					</li>
-					<li>
-						<p>Search</p>
-					</li>
-					<li>
-						<p>About Us</p>
-					</li>
-					<li>
-						<p>FAQS</p>
-					</li>
-				</ul>
-
-			</div>
-			<div class="GetInTouch">
-				<ul class="list-style: none">
-					<li>
-						<h3>Get In Touch</h3>
-					</li>
-					<li>
-						<p>Customer Service</p>
-					</li>
-					<li>
-						<p>Monday - Friday 8:00AM - 4:00PM EST</p>
-					</li>
-					<li>
-						<p>(586) 886-6646</p>
-					</li>
-					<li>
-						<p>Sales@BHBReptiles.com</p>
-					</li>
-					<li>
-						<p>Info@BHBReptiles.com</p>
-					</li>
-				</ul>
-
-			</div>
-		</div>
+                        <!--  Example item end -->
+                    </div>
+                    <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
-
-		<div class="GetInTouch"></div>
-		<div class="Newsletter"></div>
-	</div>
+    <!--	-------footer--------------------------------------------------------------------------------->
+    <div id="lowerBackground">
 
 
-	<!--   script ------------------------------- ----------------------------->
+        <div class="bottomBar">
+            <div class="QuickLinks">
+                <ul style="list-style: none">
+                    <li>
+                        <h3>QuickLinks</h3>
+                    </li>
+                    <li>
+                        <p>Search</p>
+                    </li>
+                    <li>
+                        <p>About Us</p>
+                    </li>
+                    <li>
+                        <p>FAQS</p>
+                    </li>
+                </ul>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script>
-		//nav bar----------------------------------------------------------
-		$(document).ready(function() {
-			$(window).scroll(function() {
-				if ($(document).scrollTop() > 10) {
-					$('#nav').addClass('shrink');
-				} else {
-					$('#nav').removeClass('shrink');
-				}
-			});
-		});
+            </div>
+            <div class="GetInTouch">
+                <ul class="list-style: none">
+                    <li>
+                        <h3>Get In Touch</h3>
+                    </li>
+                    <li>
+                        <p>Customer Service</p>
+                    </li>
+                    <li>
+                        <p>Monday - Friday 8:00AM - 4:00PM EST</p>
+                    </li>
+                    <li>
+                        <p>(586) 886-6646</p>
+                    </li>
+                    <li>
+                        <p>Sales@BHBReptiles.com</p>
+                    </li>
+                    <li>
+                        <p>Info@BHBReptiles.com</p>
+                    </li>
+                </ul>
 
-		//---------slider-----------------------------------------------------
-		// Instantiate the Bootstrap carousel
-		$('.multi-item-carousel').carousel({
-			interval: false
-		});
+            </div>
+        </div>
 
-		// for every slide in carousel, copy the next slide's item in the slide.
-		// Do the same for the next, next item.
-		$('.multi-item-carousel .item').each(function() {
-			var next = $(this).next();
-			if (!next.length) {
-				next = $(this).siblings(':first');
-			}
-			next.children(':first-child').clone().appendTo($(this));
 
-			if (next.next().length > 0) {
-				next.next().children(':first-child').clone().appendTo($(this));
-			} else {
-				$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-			}
 
-		});
-	</script>
-		<footer>
-		<div class="row">
-			<div id="privacy" class="col-md-2">
-				<a class="link" href="https://www.bhbreptiles.com/">© 2017 BHB Reptiles  </a>
-				<br>
-				<a class="link" href="https://www.shopify.com/"> Ecommerce Software by Shopify</a>
-				<br>
-				<a class="link" href="https://www.script-tutorials.com/">Privacy Policy</a>
-				<br/>
-			</div>
-			<div class="col-md-8">
-				<p style="text-align:center;"><b>© 2017 BHB Reptiles Ecommerce Software by Shopify</b></p>
-			</div>
-		</div>
-	</footer>
+
+        <div class="GetInTouch"></div>
+        <div class="Newsletter"></div>
+    </div>
+
+    <footer>
+        <div class="row">
+            <div id="privacy" class="col-md-2">
+                <a class="link" href="https://www.bhbreptiles.com/">© 2017 BHB Reptiles  </a>
+                <br>
+                <a class="link" href="https://www.shopify.com/"> Ecommerce Software by Shopify</a>
+                <br>
+                <a class="link" href="https://www.script-tutorials.com/">Privacy Policy</a>
+                <br/>
+            </div>
+            <div class="col-md-8">
+                <p style="text-align:center;"><b>© 2017 BHB Reptiles Ecommerce Software by Shopify</b></p>
+            </div>
+            <div class="col-md-2 social">
+                <img src="img/iglogo.png">
+                <img src="img/fblogo.png">
+                <img src="img/ytlogo.png">
+            </div>
+        </div>
+    </footer>
+
+
+    <!--   script ------------------------------- ----------------------------->
+
+    <script>
+        //nav bar----------------------------------------------------------
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 10) {
+                    $('#nav').addClass('shrink');
+                } else {
+                    $('#nav').removeClass('shrink');
+                }
+            });
+        });
+
+        //---------slider-----------------------------------------------------
+        // Instantiate the Bootstrap carousel
+        $('.multi-item-carousel').carousel({
+            interval: false
+        });
+
+        // for every slide in carousel, copy the next slide's item in the slide.
+        // Do the same for the next, next item.
+        $('.multi-item-carousel .item').each(function() {
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+
+            if (next.next().length > 0) {
+                next.next().children(':first-child').clone().appendTo($(this));
+            } else {
+                $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+            }
+
+        });
+    </script>
 </body>
 
 </html>
