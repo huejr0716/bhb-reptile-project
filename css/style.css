@@ -37,49 +37,7 @@ body {
     height: auto;
     width: 100%;
 }
-nav{
-    background-color: #596f38;
-    overflow: hidden;
-}
-
-nav ul{
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li{
-    float: left;
-}
-
-nav ul li a{
-    color: #FFFFFF;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
-    height: 40px;
-    line-height: 25px;
-    padding: 4px 16px 4px 20px;
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-nav ul li a:hover,
-nav ul li.selected a{
-    background: none repeat scroll 0 0 #353535;
-}
 
 
-.Home{
-	position: relative;
-	top: 200px;
-}
-.Shop{
-	position: relative;
-	top: 166px;
-	left: 300px;
-}
-.SignUp{
-	position: relative;
-	top: 132px;
-	left: 550px
-}
+/*----------------------------------------------*/
+
